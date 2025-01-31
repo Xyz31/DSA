@@ -88,13 +88,15 @@ public:
 
 ### Approach - 2 Dijkstra Algorithm
 ```cpp
+
+typedef pair<int,int> pii;
 class Solution {
 public:
     void bfs(unordered_map<char,vector<pair<char,int>>>&graph,char source,vector<vector<int>>&distances){
 //Normal BFS shortest path code
 //Saving calculated distance in distances array
 
-        queue<pair<int,int>>q;
+        priority_queue<pii, vector<pii>,greater<pii>>q;
         q.push({source,0});
         while(!q.empty()){
             int node = q.front().first;
